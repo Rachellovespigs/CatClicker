@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <img>
+    <script>
+        document.body.style.backgroundColor = "purple"
+        document.body.style.textAlign = "center"
+        var score = document.querySelector("h1")
+        var catImage = document.querySelector("img")
+        var points = 0 
+        var meow = new Audio()
+        meow.src = "Cat.mp3"
+
+        score.innerHTML = points
+        catImage.src = "Cat.jpg"
+
+        catImage.onclick = doSomething
+
+        function doSomething(){
+            meow.load()
+            meow.play()
+            points += 1
+            console.log(points)
+            score.innerHTML = points
+            if(points == 10){
+                catImage.src = "Cat2.jpg"
+            }
+            if(points == 20){
+                catImage.src = "Cat3.jpg"
+            }
+        }
+
+
+    </script>
+</body>
+</html>
